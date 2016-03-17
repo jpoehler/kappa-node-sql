@@ -48,7 +48,7 @@ app.post('/people', function(req, res) {
     };
 
     pg.connect(connectionString, function(err, client, done) {
-        client.query("INSERT INTO people (name, address) VALUES ($1, $2) RETURNING id",
+        client.query("INSERT INTO people (name, address, city, state, zip) VALUES ($1, $2, $3, $4, $5) RETURNING id",
             [addPerson.name, addPerson.address, addPerson.city, addPerson.state, addPerson.zip],
             function (err, result) {
                 done();

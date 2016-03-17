@@ -2,7 +2,6 @@ $(document).ready(function() {
 
     $('#submit-button').on('click', postData);
 
-
 });
 
 function postData() {
@@ -36,8 +35,19 @@ function getData() {
     $.ajax({
         type: 'GET',
         url: '/people',
-        success: function(data) {
-            console.log(data);
-        }
+        success: render
+          //  console.log(data);
+
     });
+}
+function render(data) {
+  console.log(data);
+  var $people = $('.people');
+  $people.empty();
+  $people.append('<ol></ol>');
+  var $list = $people.children().last();
+  data.forEach(function (element) {
+    $list.append('<li>Name: ' + element.name +'\tAddress: ' + element.address + ', ' + element.city + ', ' + element.state + ' ' + element.zip + '</li>');
+  });
+  $('#sql-form').trigger('reset');
 }
