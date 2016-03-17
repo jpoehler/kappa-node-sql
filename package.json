@@ -1,0 +1,18 @@
+{
+  "name": "node-sql-app",
+  "version": "1.0.0",
+  "description": "node with pg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Kris",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jquery": "^2.2.1",
+    "pg": "^4.5.1"
+  }
+}
